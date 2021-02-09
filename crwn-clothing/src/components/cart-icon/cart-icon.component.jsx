@@ -17,6 +17,13 @@ const mapStateToProps = state => ({
     itemCount: selectCartItemsCount(state)
 });
 
+// Without using reselect
+// const mapStateToProps = ({ cart: { cartItems }}) => ({
+//     itemCount: cartItems.reduce(
+//         (accumulatedQuantity, cartItem) => accumulatedQuantity + cartItem.quantity, 0
+//     )
+// });
+
 const mapDispatchToProps = dispatch => ({
     toggleCartHidden: () => dispatch(toggleCartHidden())
 })
